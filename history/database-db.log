@@ -1,0 +1,4 @@
+2023-11-06 20:11:05 INFO  Database:24 - connection successful
+  2023-11-06 20:14:45 INFO  Database:24 - connection successful
+  2023-11-06 20:49:03 ERROR Database:22 - org.h2.jdbc.JdbcSQLNonTransientException: General error: "The write format 3 is larger than the supported format 2 [2.1.210/5]" [50000-210]
+  

@@ -1,8 +1,6 @@
-package org.example;
+package org.example.Database;
 
 import org.apache.log4j.Logger;
-import org.flywaydb.core.Flyway;
-
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,15 +8,13 @@ import java.sql.SQLException;
 
 public class Database {
     final private static Logger logger = Logger.getLogger(Database.class);
-    final private static String URL = "jdbc:h2:~/db";
-    final private static String USER = "sa";
-    final private static String PASSWORD = "password";
+
     private static Database instance;
     private Connection connection;
 
     public Database getInstance() {
         if (instance == null) {
-            try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            try (Connection connection = DriverManager.getConnection(Config.URL, Config.USER, Config.PASSWORD)) {
                 instance = new Database();
                 instance.connection = connection;
                 logger.info("connection successful");
@@ -27,12 +23,5 @@ public class Database {
             }
         }
         return instance;
-    }
-
-    public void flywayMigration(){
-        Flyway.configure()
-                .dataSource(URL, USER, PASSWORD)
-                .load()
-                .migrate();
     }
 }
