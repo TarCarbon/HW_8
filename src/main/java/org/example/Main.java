@@ -2,6 +2,7 @@ package org.example;
 
 import org.apache.log4j.Logger;
 import org.example.Database.Database;
+import org.example.Database.FlywayMigration;
 
 public class Main {
 
@@ -9,5 +10,6 @@ public class Main {
     public static void main(String[] args) {
         logger.info("Started");
         Database database = new Database().getInstance();
+        new FlywayMigration().migration();
     }
 }
