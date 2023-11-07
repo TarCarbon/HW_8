@@ -24,4 +24,13 @@ public class Database {
         }
         return instance;
     }
+
+    public void closeConnection(){
+        try {
+            connection.close();
+            logger.info("Connection is close");
+        }catch (SQLException e) {
+            logger.error("Error close connection" + e);
+        }
+    }
 }

@@ -1,0 +1,1 @@
+CREATE TABLE spacetravel.client (ID INT, NAME VARCHAR(50));
