@@ -1,4 +1,4 @@
-package org.example.database;
+package org.example.db;
 
 import org.apache.log4j.Logger;
 

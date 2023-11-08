@@ -18,12 +18,12 @@ CREATE TABLE IF NOT EXISTS residents_to_apartments (id INT, resident_id INT, apa
                                                     FOREIGN KEY (resident_id) REFERENCES residents(id),
     FOREIGN KEY (apartment_id) REFERENCES apartments(id));
 
-CREATE TABLE IF NOT EXISTSproperty_rights_to_residents (id INT PRIMARY KEY, resident_id INT, property_right_id,
+CREATE TABLE IF NOT EXISTS property_rights_to_residents (id INT PRIMARY KEY, resident_id INT, property_right_id,
                                                         FOREIGN KEY (resident_id) REFERENCES residents(id,
                                                                                                        FOREIGN KEY (property_right_id) REFERENCES property_rights(id)));
 
 CREATE TABLE IF NOT EXISTS participant_to_apartments (id INT, apartment_id INT, participant_OSBB_id INT,
                                                       FOREIGN KEY (apartment_id) REFERENCES apartments(id),
-    FOREIGN KEY (participant_OSBB_id) REFERENCES participants_OSBB(id));
+        FOREIGN KEY (participant_OSBB_id) REFERENCES participants_OSBB(id));
 
 
