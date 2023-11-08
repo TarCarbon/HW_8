@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTSbuilders (id INT AUTO_INCREMENT PRIMARY KEY, adress VARCHAR(100));
+CREATE TABLE IF NOT EXISTS builders (id INT AUTO_INCREMENT PRIMARY KEY, address VARCHAR(100));
 
 CREATE TABLE IF NOT EXISTS apartments (id INT AUTO_INCREMENT PRIMARY KEY, number SMALLINT, area SMALLINT);
 
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS builders_to_apartments (id INT AUTO_INCREMENT PRIMARY
 CREATE TABLE IF NOT EXISTS participants_OSBB (id INT PRIMARY KEY NOT NULL, name VARCHAR(100) NOT NULL);
 
 CREATE TABLE IF NOT EXISTS residents (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), sname VARCHAR(100),email VARCHAR(100),
-    CONSTRAINT chk_email_format CHECK (email REGEXP '^[A-Za-z9-0+_.-]+@(.+)$'), drive_into_the_terretory TINYINT DEFAULT 0, participant_OSBB_id INT,
+    CONSTRAINT chk_email_format CHECK (email REGEXP '^[A-Za-z9-0+_.-]+@(.+)$'), drive_into_the_territory TINYINT DEFAULT 0, participant_OSBB_id INT,
     FOREIGN KEY (participant_OSBB_id) REFERENCES participants_OSBB(id));
 
 CREATE TABLE IF NOT EXISTS property_rights (id INT PRIMARY KEY, property_right VARCHAR(100));

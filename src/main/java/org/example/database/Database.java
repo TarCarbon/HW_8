@@ -1,4 +1,4 @@
-package org.example.Database;
+package org.example.database;
 
 import org.apache.log4j.Logger;
 
@@ -25,6 +25,9 @@ public class Database {
         return instance;
     }
 
+    public Connection getConnection(){
+        return connection;
+    }
     public void closeConnection(){
         try {
             connection.close();

@@ -1,8 +1,11 @@
 package org.example;
 
 import org.apache.log4j.Logger;
-import org.example.Database.Database;
-import org.example.Database.FlywayMigration;
+import org.example.CRUD.Buildings;
+import org.example.CRUD.Residents;
+import org.example.database.Database;
+import org.example.database.FlywayMigration;
+import org.example.query.FindResidents;
 
 public class Main {
 
@@ -11,6 +14,9 @@ public class Main {
         logger.info("Started");
         new FlywayMigration().migration();
         Database database = new Database().getInstance();
+        Buildings.readRecords(database.getConnection());
+        Residents.readRecord();
+        FindResidents.findResidents(database.getConnection());
         database.closeConnection();
     }
 }
